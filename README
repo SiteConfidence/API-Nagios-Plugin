@@ -1,0 +1,22 @@
+API Nagios Plugin
+
+Contributors:
+Richard Wiggins
+Alistair Charmichael
+Owen Johns
+
+The Agile bit: 
+
+"As a systems administrator I wish I could check the status of my 
+Page/Script from a nagios API Plugin and have all the lovely SiteConfidence™ error codes 
+available to me instead of having to run 2 separate monitoring systems"
+
+This plugs into your existing Nagios system and allows you to monitor your page status via 
+SiteConfidence's™ super powerful API. 
+
+Simply copy the Plugin to your PlugIns directory add it as a service to Nagios and Robert's 
+your mother's brother, all that SiteConfidence™ goodness on your own Nagios. 
+
+Usage 
+
+check_current_status.sh username password pageid accountid 

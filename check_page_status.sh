@@ -14,9 +14,9 @@ fi
 
 key=`curl -s https://api.siteconfidence.co.uk/beta0.3/username/$username/password/$password | sed 's/.*ApiKey Lifetime="[0-9]*">\(.*\)<\/ApiKey.*/\1/'`
 
-#resultcode=`curl -s https://api.siteconfidence.co.uk//beta0.3/$cookie/AccountId/$accountid/Id/$pageid/ | awk ' { print $25 } ' |  sed s/\"/:/g | awk 'BEGIN { FS = ":" } ; { print $2 }'`
+#resultcode=`curl -s https://api.siteconfidence.co.uk//beta0.4.1/$cookie/AccountId/$accountid/Id/$pageid/ | awk ' { print $25 } ' |  sed s/\"/:/g | awk 'BEGIN { FS = ":" } ; { print $2 }'`
 
-resultcode=`curl -s https://api.siteconfidence.co.uk//beta0.3/$key/AccountId/$accountid/Id/$pageid/Return/%5BAccount%5BPages%5BPage%5BResultCode%5D%5D%5D%5D/ | sed 's/.*ResultCode="\([0-9]*\)".*/\1/'`
+resultcode=`curl -s https://api.siteconfidence.co.uk//beta0.4.1/$key/AccountId/$accountid/Id/$pageid/Return/%5BAccount%5BPages%5BPage%5BResultCode%5D%5D%5D%5D/ | sed 's/.*ResultCode="\([0-9]*\)".*/\1/'`
 
 
 
@@ -452,7 +452,7 @@ case $resultcode in
 		exit 2
 		;;
 	* )
-		echo "An unknown error has occured."
+		echo "An unknown error has occurred."
 		exit 3
 		;;	
 esac

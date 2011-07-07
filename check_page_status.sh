@@ -12,7 +12,7 @@ else
 	accountid=$4
 fi
 
-key=`curl -s https://api.siteconfidence.co.uk/beta0.3/username/$username/password/$password | sed 's/.*ApiKey Lifetime="[0-9]*">\(.*\)<\/ApiKey.*/\1/'`
+key=`curl -s https://api.siteconfidence.co.uk/beta0.4.1/username/$username/password/$password | sed 's/.*ApiKey Lifetime="[0-9]*">\(.*\)<\/ApiKey.*/\1/'`
 
 #resultcode=`curl -s https://api.siteconfidence.co.uk/beta0.4.1/$cookie/AccountId/$accountid/Id/$pageid/ | awk ' { print $25 } ' |  sed s/\"/:/g | awk 'BEGIN { FS = ":" } ; { print $2 }'`
 

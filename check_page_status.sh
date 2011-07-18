@@ -152,11 +152,11 @@ case $resultcode in
 		exit 2
 		;;
 	'54' )
-		echo "A general fatal error occured."
+		echo "A general fatal error occurred."
 		exit 2
 		;;
 	'55' )
-		echo "A general fatal error occured."
+		echo "A general fatal error occurred."
 		exit 2
 		;;
 	'33' )
@@ -220,7 +220,7 @@ case $resultcode in
 		exit 2
 		;;
 	'82' )
-		echo "Sorry, an error has occured while trying to process your request."
+		echo "Sorry, an error has occurred while trying to process your request."
 		exit 2
 		;;
 	'83' )
@@ -344,11 +344,11 @@ case $resultcode in
 		exit 1
 		;;
 	'45' )
-		echo "A connection was made but a time out occured while waiting for the data."
+		echo "A connection was made but a time out occurred while waiting for the data."
 		exit 2
 		;;
 	'46' )
-		echo "A connection was made but a time out occured while waiting for the data for an object."
+		echo "A connection was made but a time out occurred while waiting for the data for an object."
 		exit 1
 		;;
 	'147' )
@@ -376,7 +376,7 @@ case $resultcode in
 		exit 2
 		;;
 	'152' )
-		echo "User password has exired and a new one need to be set"
+		echo "User password has expired and a new one need to be set"
 		exit 2
 		;;
 	'153' )

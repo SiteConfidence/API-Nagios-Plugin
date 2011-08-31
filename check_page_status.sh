@@ -11,13 +11,10 @@ else
 	pageid=$3
 	accountid=$4
 fi
-#hello
-key=`curl -s https://api.siteconfidence.co.uk/beta0.4.1/username/$username/password/$password | sed 's/.*ApiKey Lifetime="[0-9]*">\(.*\)<\/ApiKey.*/\1/'`
 
-#resultcode=`curl -s https://api.siteconfidence.co.uk/beta0.4.1/$cookie/AccountId/$accountid/Id/$pageid/ | awk ' { print $25 } ' |  sed s/\"/:/g | awk 'BEGIN { FS = ":" } ; { print $2 }'`
+key=`curl -s https://api.siteconfidence.co.uk/current/username/$username/password/$password | grep ApiKey | sed 's/.*ApiKey Lifetime="[0-9]*">\(.*\)<\/ApiKey.*/\1/'`
 
-resultcode=`curl -s https://api.siteconfidence.co.uk/beta0.4.1/$key/AccountId/$accountid/Id/$pageid/Return/[Account[Pages[Page[ResultCode]]]]/ | sed 's/.*ResultCode="\([0-9]*\)".*/\1/'`
-
+resultcode=`curl -s https://api.siteconfidence.co.uk/current/$key/AccountId/$accountid/Id/$pageid/Return/%5BAccount%5BPages%5BPage%5BResultCode%5D%5D%5D%5D/ | grep ResultCode= | sed 's/.*ResultCode="\([0-9]*\)".*/\1/'`
 
 
 # exit 3 = unknown
@@ -152,11 +149,11 @@ case $resultcode in
 		exit 2
 		;;
 	'54' )
-		echo "A general fatal error occurred."
+		echo "A general fatal error occured."
 		exit 2
 		;;
 	'55' )
-		echo "A general fatal error occurred."
+		echo "A general fatal error occured."
 		exit 2
 		;;
 	'33' )
@@ -220,7 +217,7 @@ case $resultcode in
 		exit 2
 		;;
 	'82' )
-		echo "Sorry, an error has occurred while trying to process your request."
+		echo "Sorry, an error has occured while trying to process your request."
 		exit 2
 		;;
 	'83' )
@@ -344,11 +341,11 @@ case $resultcode in
 		exit 1
 		;;
 	'45' )
-		echo "A connection was made but a time out occurred while waiting for the data."
+		echo "A connection was made but a time out occured while waiting for the data."
 		exit 2
 		;;
 	'46' )
-		echo "A connection was made but a time out occurred while waiting for the data for an object."
+		echo "A connection was made but a time out occured while waiting for the data for an object."
 		exit 1
 		;;
 	'147' )
@@ -376,7 +373,7 @@ case $resultcode in
 		exit 2
 		;;
 	'152' )
-		echo "User password has expired and a new one need to be set"
+		echo "User password has exired and a new one need to be set"
 		exit 2
 		;;
 	'153' )
@@ -452,7 +449,7 @@ case $resultcode in
 		exit 2
 		;;
 	* )
-		echo "An unknown error has occurred."
+		echo "An unknown error has occured."
 		exit 3
 		;;	
 esac
